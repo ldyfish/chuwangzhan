@@ -1,0 +1,239 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>我的个人博客</title>
+	<link rel="stylesheet" href="../css/css1.css">
+	<script src="http://libs.baidu.com/jquery/1.11.3/jquery.min.js"></script>
+	<meta name="viewport" content="width=device-width,initial-scale=1.0" />
+</head>
+
+<body background="../img/3.jpg">
+	<div id="content">
+		<div id="head">
+		<img src="../img/5986890_0_0.jpg" alt="">	
+		</div>
+		<div id="nav">
+			<div id="nav1">
+					<ul>
+						<li><a href=""><img src="../img/nav3.png" alt=""> 首页</a></li>
+						<li><a href=""><img src="../img/nav1.png" alt=""> 订阅</a></li>
+						<li><a href="lianxi.html"><img src="../img/nav2.png" alt=""> 联系</a></li>
+						<li><a href=""><img src="../img/nav4.png" alt=""> 管理</a></li>
+					</ul>
+			</div>
+			<div id="nav2">
+				<ul>
+					<li><a href="zhuce2.html">登录</a></li>
+					<li><a href="zhuce.html">注册账号</a></li>
+				</ul>
+			     
+				
+				<!--
+				<form action="">
+				账户：<input type="text">
+			    密码：<input type="password">
+				<input type="submit" value="注册">
+			     <input type="reset" value="重置">
+				</form>
+				-->
+			</div>
+		</div>
+		<div id="main">
+		  <div id="asider">
+				
+			
+		<div id="asider1">
+			<img src="../img/touxiang.png" alt="">
+		</div>
+				
+		<div id="asider3">
+			<p>昵称：秃头猪</p>
+			<p>博龄：1个月</p>
+			<p>关注：5</p>
+			<p>粉丝：40</p>
+		  
+		  <ul>
+			<li><a href="">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; +加关注</a></li>
+		  </ul>
+		</div>
+			
+		<div id="asider2">
+			<p>&nbsp; &nbsp;友情链接</p>
+			<hr>
+		<ul class="one">
+	   	</li>
+	   	<li><a href="轮翻图.html">每日图片分享</a>
+	   	</li>
+	   	<li>HTML网络文章
+	   		<ul class="two">
+	   			<li><a href="https://www.runoob.com/html/html-tutorial.html">学习HTML</a></li>
+	   			<li><a href="https://www.cnblogs.com/">博客园</a></li>
+	   			<li><a href="https://www.csdn.net/">CSDN</a></li>
+	   		</ul>
+	   	</li>
+	   	<li>CSS网络文章
+	   		<ul class="two">
+	   			<li><a href="https://www.runoob.com/css/css-tutorial.html">学习CSS</a></li>
+	   			<li><a href="http://www.divcss5.com/cssrumen/">CSS+DIV基础</a></li>
+	   			
+	   			
+	   		</ul>
+	   	</li>
+	   	<li>JS相关文章
+	   		<ul class="two">
+	   			<li><a href="https://www.runoob.com/js/js-tutorial.html">学习Javascript</a></li>
+	   			<li><a href="http://caibaojian.com/c/javascript-base">前端开发博客</a></li>
+	   			<li><a href="https://www.cnblogs.com/shengulong/p/8745759.html">了解JS相关插件</a></li>
+	   		</ul>
+	   	</li>
+	  
+	   	
+				
+				</ul>
+			</div>
+				<div id="find">
+				<p></p>
+
+               <form>
+            <input type="text" name="search" placeholder="搜索..">
+            <br>
+<button>搜索</button>
+               </form>
+				
+				</div>
+			<div id="fensi">
+			  <p>&nbsp; &nbsp; 最新评论</p>
+			  <hr>
+			</div>	
+		<div class="scroll-box">
+			
+  <ul>
+    <li>花狗：博主是在校生吗？</li>
+    <li>scj：一看就知道是新手</li>
+    <li>哈：带带带我我！！！</li>
+    <li>dog：不错不错</li>
+    <li>博主：欢迎来到我的主页</li>
+    <li>%：别秃头了</li>
+    <li>xixi：给ye冲冲冲</li>
+  </ul>
+</div>
+				  
+	<div id="lunfan">
+    </div>
+				 
+			</div>
+	<script>
+	var html=document.getElementById("scroll-box");
+$(function() {
+    //获得当前<ul>
+    var $uList = $(".scroll-box ul");
+    var timer = null;
+    //触摸清空定时器
+    $uList.hover(function() {
+        clearInterval(timer);
+    },
+    function() { //离开启动定时器
+        timer = setInterval(function() {
+            scrollList($uList);
+        }, 1000);
+    }).trigger("mouseleave"); //自动触发触摸事件
+    //滚动动画
+    function scrollList(obj) {
+        //获得当前<li>的高度
+        var scrollHeight = $("ul li:first").height();
+        //滚动出一个<li>的高度
+        $uList.stop().animate({
+            marginTop: -scrollHeight
+        }, 600,
+        function() {
+            //动画结束后，将当前<ul>marginTop置为初始值0状态，再将第一个<li>拼接到末尾。
+            $uList.css({
+                marginTop: 0
+            }).find("li:first").appendTo($uList);
+        });
+    }
+});
+</script>
+   
+			
+			<div id="arise">
+			<h2>实例解析</h2>
+          <ul>
+          <li><strong>&lt;!DOCTYPE html&gt;</strong> 声明为 HTML5 文档</li>
+          <li><strong>&lt;html&gt;</strong> 元素是 HTML 页面的根元素</li>
+          <li><strong>&lt;head&gt;</strong> 元素包含了文档的元（meta）数据，如 <span class="marked">&lt;meta charset="utf-8"&gt;</span> 定义网页编码格式为 <strong>utf-8</strong>。</li>
+          <li><strong>&lt;title&gt;</strong> 元素描述了文档的标题</li>
+          <li><strong>&lt;body&gt;</strong> 元素包含了可见的页面内容</li>
+          <li><strong>&lt;h1&gt;</strong> 元素定义一个大标题</li>
+          <li><strong>&lt;p&gt;</strong> 元素定义一个段落</li>
+          </ul>
+             <p><strong>注：</strong>在浏览器的页面上使用键盘上的 F12 按键开启调试模式，就可以看到组成标签。</p>
+<br>
+             <hr><h2>什么是HTML?</h2>
+             <p>HTML 是用来描述网页的一种语言。</p><ul>
+             <li>HTML 指的是超文本标记语言: <b>H</b>yper<b>T</b>ext <b>M</b>arkup <b>L</b>anguage</li>
+             <li>HTML 不是一种编程语言，而是一种<b>标记</b>语言</li>
+             <li>标记语言是一套<b>标记标签</b> (markup tag)</li>
+	         <li>HTML 使用标记标签来<b>描述</b>网页</li>
+             <li>HTML 文档包含了HTML<b> 标签</b>及<b>文本</b>内容</li>
+             <li>HTML文档也叫做<b> web 页面</b></li>
+             </ul>
+             <hr><h2>HTML 标签</h2><p>HTML 标记标签通常被称为 HTML 标签 (HTML tag)。</p>
+	
+       <ul>
+             <li>HTML 标签是由<em>尖括号</em>包围的关键词，比如 &lt;html&gt;</li>
+              <li>HTML 标签通常是<em>成对出现</em>的，比如 &lt;b&gt; 和 &lt;/b&gt;</li>
+              <li>标签对中的第一个标签是<em>开始标签</em>，第二个标签是<em>结束标签</em></li>
+              <li>开始和结束标签也被称为<em>开放标签</em>和<em>闭合标签</em></li>
+      </ul>
+
+
+            <div style="width:610px;border:1px solid lightgray;font-size:20px;padding:10px">
+            <span style="color:#98bf21">&lt;标签&gt;</span>内容<span style="color:#98bf21">&lt;/标签&gt;</span></div>
+                <br>
+            <hr><h2>HTML 元素</h2>
+            <p>"HTML 标签" 和 "HTML 元素" 通常都是描述同样的意思.</p>
+            <p>但是严格来讲, 一个 HTML 元素包含了开始标签与结束标签，如下实例: </p>
+            <p>HTML 元素:</p>
+
+			
+			
+			
+			
+			</div>
+		</div>
+		<div id="footer">
+			<h3>站点声明：</h3>
+			<p>1、本站个人博客网站模板，均为本人设计，个人可以使用，但是未经许可不得用于任何商业目的。</p>
+			<p>2、由于博主是新手，也因HTML期末作业需要，本站的‘友情链接’部分提供的链接为网络博主或相关网站，如有侵权请联系博主删除。</p>
+			<h5><span> 建站至今已运行</span>
+				<span id="span_dt_dt"></span>
+				<script> /*建站时间*/ 
+					function show_date_time() {
+						window.setTimeout("show_date_time()", 1e3);
+						var BirthDay = new Date("2020/06/28"), 
+							today = new Date, 
+							timeold = today.getTime() - BirthDay.getTime(),
+							msPerDay = 864e5,
+							e_daysold = timeold / msPerDay,
+							daysold = Math.floor(e_daysold), 
+							e_hrsold = 24 * (e_daysold - daysold),
+							hrsold = Math.floor(e_hrsold), 
+							e_minsold = 60 * (e_hrsold - hrsold), 
+							minsold = Math.floor(60 * (e_hrsold - hrsold)), 
+							seconds = Math.floor(60 * (e_minsold - minsold)); span_dt_dt.innerHTML = daysold + "天" + hrsold + "小时" + minsold + "分" + seconds + "秒"; 
+					} 
+					show_date_time();</script></h5>
+		</div>
+	</div>
+	<div id="l-fix">
+  	<p>	<img src="../img/asiderlogo.gif"></p>	
+</div>
+	<div id="r-fix">
+	<audio src="../music/V.A. - 未闻花名 (口琴版).mp3" controls="controls">
+	<soure></soure>
+	</audio>
+	</div>
+</body>
+</html>
